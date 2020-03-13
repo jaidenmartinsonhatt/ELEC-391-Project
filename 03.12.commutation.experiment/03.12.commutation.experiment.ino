@@ -24,7 +24,7 @@ int val = 255;
 
 
 volatile int count = 0;
-double grades=0, pgrades=10; /*variable to store converted value*/
+double grades=0, pgrades=10; /*variable to store converted value*/ // pid stuff
 byte state = 0;
 int encA = 0, encB = 0;
 int psensorValA=0,psensorValB=0,psensorValC=0,psensorValD=0,psensorValE=0,psensorValF=0;
@@ -47,7 +47,7 @@ void setup() {
   temp = 0;
    //start serial connection
   Serial.begin(9600);
-  //configure pin 2 as an input and enable the internal pull-up resistor
+  
   pinMode(sensorA, INPUT);
   pinMode(sensorB, INPUT);
   pinMode(sensorC, INPUT);
@@ -79,10 +79,11 @@ void setup() {
 
 
 void loop() {
- /* if (Serial.available() > 0){
-  val = Serial.parseInt();
-  Serial.println(val);}
-  
+  //if (Serial.available() > 0){
+  //val = Serial.parseInt();
+ // }
+  //Serial.println(val);}
+  /*
     if (grades != pgrades){
     Serial.println(grades);
     pgrades = grades;
@@ -105,14 +106,7 @@ void loop() {
 }
 
 void compute() {
-  /*
-   * 001 -> ORANGE (clockwise)
-   * 011 -> GREEN (clockwise)
-   * 010 -> YELLOW (clockwise)
-   * 110 -> ORANGE
-   * 100 -> GREEN (clockwise
-   * 101 -> YELLOW 
-   */
+ 
    sensorValA = digitalRead(sensorA);
    sensorValB = digitalRead(sensorB);
    sensorValC = digitalRead(sensorC);
